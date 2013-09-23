@@ -1,0 +1,6 @@
+
+	todos os times jogarão contra todos, uns contra os outros
+	
+	a quatidade de jogos sempre será (n - 1)! onde n é a quantidade de times
+	
+	
