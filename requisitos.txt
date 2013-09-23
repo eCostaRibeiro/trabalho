@@ -1,0 +1,75 @@
+o sistema deve fazer um gerenciamento de um campeoato de futebol:
+	deve possuir:
+		- tela para cadastrar um campeonato, podendo haver mais de um
+		- tela para cadastrar grupos (organizar os times)
+		- tela para cadastrar times
+		- tela para gerar partidas
+		- tela para cadastrar jogadores
+		- tela para cadastrar árbitros
+		- tela para cadastrar estádios
+		- tela para definir os resultados das partidas de cada rodada
+		- tela para acompanhar as rodadas
+		
+		Campeonato:
+			- um campeonato acontece quando este possui times cadastrados, bem como juizes e estádios
+			- cada campeonato permite que um jogador jogue por um único time, sendo permitido remanejamentos
+			  de jogadores apenas ao comporem-se novos times para outros campeonatos
+			- cada rodada será composta, inicialmente, pelo enfrentamento dos times de cada grupo, tendo continuidade a partir da
+			  escolha dos dois primeiros colocados ao termino de cada fase/chave
+			- as rodadas serão divididas em fases/chaves: 8ªs, 4ªs, Semifinal e Final
+			- as chaves deverão guardar o resultado dos jogos
+			- o campeonato precisa ter um nome e um ano
+			- haverá premiação somente para campeão e vice (não haverá disputa para lugares subsequentes)
+			
+		Grupos:
+			- serão formados por 4 times, sendo um total de 4 grupos resultando em 16 times ao todo
+			- classificam-se os dois primeiros colocados de cada grupo na fase/chave 8ªs (8 times), depois os dois primeiros
+			  colocados de cada grupo da fase/chave 4ªs (4 times), depois os dois primeiros na fase/chave Seminfinal e depois os dois primeiros
+			  na fase/chave Final
+			- Os times serão organizados por sorteio, mas serão alimentados no sistema já na ordem sorteada
+			- Os grupos serão classificados como:
+				A, B, C e D para as 8ªs
+				A e B para as 4ªs (onde A será formado pelos primeiros colocados dos grupos A e D; e o B pelos primeiros colocados dos grupos B e C)
+				Semifinalistas (constará os dois primeiros colocados  dos grupos anteriores)
+				Finalistas (constará os dois primeiros Semifinalistas)
+		
+		Times:
+			- cada time precisa possuir pelo menos 15 jogadores cadastrados
+			- cada time poderá compor uma equipe diferente para diferentes campeonatos, não havendo a possibilidade de mudanças durante as competições
+			- cada time deve possuir um nome
+			
+		Fases/Chaves:
+			- serão divididas em:
+				8ªs: cada time fará 3 jogos entre si (no total 6 partidas), e os dois primeiros colocados de cada grupo irão para a próxima fase
+				4ªs: cada time fará 3 jogos entre si (no total 6 partidas), e os dois primeiros colocados de cada grupo irão para Semifinal
+				Semifinal: cada time fará 3 jogos entre si (no total 6 partidas), e os dois primeiros colocados irão para a Final
+				Final: haverá apenas um confronto entre os primeiros colocados da fase/chave anterior
+			
+			
+		Partidas:
+			- as partidas serão realizadas de modo a sempre haver um vencedor, portanto não serão necessários critérios de desempate
+			  técnico ao término de cada rodada
+			- as partidadas serão compostas por tempo regular e pênaltis, este último quando se fizer necessário nos casos de empate em tempo regular
+			- cada partidada conterá dois times, um juiz, um estádio e será, tão somente, subentendida dentro de um campeonato, de uma fase/chave e de uma rodada
+		
+		Rodadas:
+			- cada rodada conterá 2 partidas de cada grupo, sendo uma partida na rodada final; no total serão jogadas 19 partidas em 10 rodadas:
+				8ªs (3 rodadas = 6 partidas)
+				4ªs (3 rodadas = 6 partidas)
+				Semifinal (3 rodadas = 6 partidas)
+				Final (1 única rodada/partida)
+		
+		Jogadores:
+			- Os jogadores serão cadastrados exclusivamente a partir de um time quando sua inscrição em um campeonato
+			- Os jogadores deverão ter nomes, idade e naturalidade cadastrados
+		
+		Árbitros
+			- deverão ser cadastrados um total de 3 árbitros
+			- a cada partida será definido um índice de satisfação de desempenho, a saber: insatisfatório, satisfatório, muito satisfatório
+			- o árbitro que contiver o melhor índice de participação dirigirá a partida final
+		
+		Estadio
+			- os estadios devem conter nome e serão apontados nas partidas
+
+
+		
