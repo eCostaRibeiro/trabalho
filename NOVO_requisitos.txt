@@ -3,4 +3,56 @@
 	
 	a quatidade de jogos sempre será (n - 1)! onde n é a quantidade de times
 	
+---------------------------------------------------------------------------------------------------------	
+	
+	
+	• Fazer um sistema que gerencie um campenato de futebol de pontos corridos com turno e returno,
+	  contendo todas as informações armazenadas em um banco de dados
+	
+	• O campeonato só poderá ocorrer com quantidade par de times cadastrados  
+	
+	• O sistema deverá possibilitar ao usuário um sistema de busca por rodadas, 
+	  onde serão apresentados apenas os jogos com as equipes participantes, desprezando
+	  o resultado dos jogos
+	  
+	• O sistema deverá possibilitar, também, um sistema de busca por time, retornando
+	  ao usuário todos os jogos realizados pelo mesmo, ordenados por rodada
+	  
+	• Os jogos deverão conter informação do estádios, árbitro e dos dois times
+	
+	• Cada estádio será cadastrado como pertencente a um time	
+	
+	• Cada time terá uma escalação por campeonato, não havendo a necessidade de
+	  escalação por jogo
+	  
+	• um jogador só poderá participar de um campeonato, não havendo a possibilidade
+	  de troca entre times
+	
+	• a formula para o calculo de quantidades de partidas é: => onde n é a quantidade de times participantes
+		jogos = n * (n-1)
+		
+	  cada turno terá
+		jogoso = n * (n-1)/2
+		
+      a quantidade de jogos por time será expressa por
+		jogos = 2n - 2
+	  
+	  se a quantidade de times for par, a quantidade de rodadas será:
+		rodadas = 2n
+	
+	• para ordenar as partidas, os times possuirão um índice e seguirão um algoritmo de
+	  ordenação por fila dentro de um vetor:
+		
+---------------------------------------------------------------------------------------------------------	
+
+classes candidatas:
+	campeonato
+	jogador
+	time
+	arbrito
+	rodadas
+	escalaçao
+	estadio
+	partida
+	
 	
