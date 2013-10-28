@@ -1,0 +1,4 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.relational.RelationalDesign>
+   <object objectType="main_view" objectID="D2E4AEBF-678B-C21B-1DC8-29DD1DE2C12D" name="Futebol_Schema" visible="true"/>
+</oracle.dbtools.crest.model.design.relational.RelationalDesign>
