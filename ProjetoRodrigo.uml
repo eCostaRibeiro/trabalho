@@ -328,7 +328,11 @@
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
+<<<<<<< HEAD
 <XPD:ATTR name="Points" type="Points">364,320;296,320;296,239</XPD:ATTR>
+=======
+<XPD:ATTR name="Points" type="Points">416,300;416,239;348,239</XPD:ATTR>
+>>>>>>> origin/documentacao
 <XPD:REF name="Model">8KM46VVt9E6SbkWzEapkmwAA</XPD:REF>
 <XPD:REF name="Head">oXU5/leLVUWWTyG/bWYpngAA</XPD:REF>
 <XPD:REF name="Tail">IE5UVGiPJkCKhZ72JL1YFwAA</XPD:REF>
@@ -1259,8 +1263,11 @@
 <XPD:REF name="Views[3]">ddXLwAul3EOW2K9B+3bGLgAA</XPD:REF>
 <XPD:ATTR name="#Associations" type="integer">3</XPD:ATTR>
 <XPD:REF name="Associations[0]">F6EfpTz/FUaS6rOOOBE5rQAA</XPD:REF>
+<<<<<<< HEAD
 <XPD:REF name="Associations[1]">aGIvHcwJNU6h1dBQbQtuUgAA</XPD:REF>
 <XPD:REF name="Associations[2]">HW3/hlaIiUGq6pfQnfE9mAAA</XPD:REF>
+=======
+>>>>>>> origin/documentacao
 <XPD:ATTR name="#Attributes" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="Attributes[0]" type="UMLAttribute" guid="ZW02TfaX6kW3Pvhc8sJaZgAA">
 <XPD:ATTR name="Name" type="string">Nome</XPD:ATTR>
