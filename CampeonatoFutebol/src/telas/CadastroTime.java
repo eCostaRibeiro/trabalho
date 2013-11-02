@@ -4,6 +4,10 @@
  */
 package telas;
 
+import campeonatofutebol.Time;
+import controles.ControleTime;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Renan
@@ -34,8 +38,8 @@ public class CadastroTime extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        jcodTime = new javax.swing.JTextField();
+        jnomeTime = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
@@ -51,11 +55,16 @@ public class CadastroTime extends javax.swing.JFrame {
 
         jLabel2.setText("Nome:");
 
-        jTextField1.setToolTipText("Código do Time");
+        jcodTime.setToolTipText("Código do Time");
 
-        jTextField2.setToolTipText("Nome do Time");
+        jnomeTime.setToolTipText("Nome do Time");
 
         jButton1.setText("Criar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Cancelar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -78,11 +87,11 @@ public class CadastroTime extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jcodTime, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jnomeTime, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -91,11 +100,11 @@ public class CadastroTime extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jcodTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jnomeTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
@@ -116,6 +125,32 @@ public class CadastroTime extends javax.swing.JFrame {
         this.dispose();
         telaAnterior.setEnabled(true);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String codTime = jcodTime.getText();
+        String nomeTime = jnomeTime.getText();
+       
+        try {
+            Integer ca = Integer.parseInt(codTime);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog (this, 
+                    "Falha no cadastro do código!");
+            return;
+        }
+        // Criando objeto do Arbitro
+        Time time = new Time (Integer.parseInt(jcodTime.getText()), jnomeTime.getText());
+        
+        // Chamar o controle para tentar cadastrar
+        ControleTime controle = new ControleTime();
+        if (controle.cadastrarTime(time)){
+            JOptionPane.showMessageDialog (this, "Cadastrado com Sucesso!");
+        
+        }else {
+            JOptionPane.showMessageDialog (this, "Falha no cadastro!");
+            
+        }
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -163,7 +198,7 @@ public class CadastroTime extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jcodTime;
+    private javax.swing.JTextField jnomeTime;
     // End of variables declaration//GEN-END:variables
 }

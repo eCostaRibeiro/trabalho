@@ -1,24 +1,31 @@
 package campeonatofutebol;
 
 public class Estadio {
-    private int cod;
-    private String nome;
+    private int codEstadio;
+    private String nomeEstadio;
+
+    //<editor-fold defaultstate="collapsed" desc="Construtor">
+    public Estadio(int codEstadio, String nomeEstadio) {
+        this.codEstadio = codEstadio;
+        this.nomeEstadio = nomeEstadio;
+    }
+    //</editor-fold>
 
     //<editor-fold defaultstate="collapsed" desc="Getters e Setters">
-    public int getCod() {
-        return cod;
+    public int getCodEstadio() {
+        return codEstadio;
     }
     
-    public void setCod(int cod) {
-        this.cod = cod;
+    public void setCodEstadio(int codEstadio) {
+        this.codEstadio = codEstadio;
     }
     
-    public String getNome() {
-        return nome;
+    public String getNomeEstadio() {
+        return nomeEstadio;
     }
     
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNomeEstadio(String nomeEstadio) {
+        this.nomeEstadio = nomeEstadio;
     }
     //</editor-fold>
     

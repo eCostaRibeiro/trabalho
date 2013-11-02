@@ -2,25 +2,32 @@
 package campeonatofutebol;
 
 public class Time {
-    private int cod;
-    private String nome;
+    private int codTime;
+    private String nomeTime;
 
-    //<editor-fold defaultstate="collapsed" desc="Getters e Setters">
-    public int getCod() {
-        return cod;
-    }
-    
-    public void setCod(int cod) {
-        this.cod = cod;
-    }
-    
-    public String getNome() {
-        return nome;
-    }
-    
-    public void setNome(String nome) {
-        this.nome = nome;
+    //<editor-fold defaultstate="collapsed" desc="Construtor">
+    public Time(int codTime, String nomeTime) {
+        this.codTime = codTime;
+        this.nomeTime = nomeTime;
     }
     //</editor-fold>
+
+    //<editor-fold defaultstate="collapsed" desc="Getters e Setters">
+    public int getCodTime() {
+        return codTime;
+    }
     
+    public void setCodTime(int codTime) {
+        this.codTime = codTime;
+    }
+    
+    public String getNomeTime() {
+        return nomeTime;
+    }
+    
+    public void setNomeTime(String nomeTime) {
+        this.nomeTime = nomeTime;
+    }
+    //</editor-fold>
+
 }

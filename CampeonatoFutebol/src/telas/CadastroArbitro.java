@@ -4,6 +4,10 @@
  */
 package telas;
 
+import campeonatofutebol.Arbitro;
+import controles.ControleArbitro;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Renan
@@ -34,8 +38,8 @@ public class CadastroArbitro extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        jcodArbitro = new javax.swing.JTextField();
+        jnomeArbitro = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
@@ -51,11 +55,16 @@ public class CadastroArbitro extends javax.swing.JFrame {
 
         jLabel2.setText("Nome:");
 
-        jTextField1.setToolTipText("Código Arbitro");
+        jcodArbitro.setToolTipText("Código Arbitro");
 
-        jTextField2.setToolTipText("Nome do Arbitro");
+        jnomeArbitro.setToolTipText("Nome do Arbitro");
 
         jButton1.setText("Criar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Cancelar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -78,11 +87,11 @@ public class CadastroArbitro extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jcodArbitro, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jnomeArbitro, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -91,11 +100,11 @@ public class CadastroArbitro extends javax.swing.JFrame {
                 .addContainerGap(17, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jcodArbitro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jnomeArbitro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
@@ -116,6 +125,31 @@ public class CadastroArbitro extends javax.swing.JFrame {
         this.dispose();
         telaAnterior.setEnabled(true);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String codArbitro = jcodArbitro.getText();
+        String nomeArbitro = jnomeArbitro.getText();
+       
+        try {
+            Integer ca = Integer.parseInt(codArbitro);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog (this, 
+                    "Falha no cadastro do código!");
+            return;
+        }
+        // Criando objeto do Arbitro
+        Arbitro arb = new Arbitro (Integer.parseInt(jcodArbitro.getText()), jnomeArbitro.getText());
+        
+        // Chamar o controle para tentar cadastrar
+        ControleArbitro controle = new ControleArbitro();
+        if (controle.cadastrarArbitro(arb)){
+            JOptionPane.showMessageDialog (this, "Cadastrado com Sucesso!");
+        
+        }else {
+            JOptionPane.showMessageDialog (this, "Falha no cadastro!");
+            
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -163,7 +197,7 @@ public class CadastroArbitro extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jcodArbitro;
+    private javax.swing.JTextField jnomeArbitro;
     // End of variables declaration//GEN-END:variables
 }

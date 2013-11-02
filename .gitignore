@@ -1,5 +1,6 @@
-/testes/TesteOrdenaTimes/nbproject/private/
-/testes/TesteOrdenaTimes/build/
-/testes/TesteOrdenaTimes/dist/
-/CampeonatoFutebol/build/
-/CampeonatoFutebol/dist/
+*.class
+/testes/TesteOrdenaTimes/nbproject/private/*
+/testes/TesteOrdenaTimes/build/*
+/testes/TesteOrdenaTimes/dist/*
+/CampeonatoFutebol/build/*
+/CampeonatoFutebol/dist/*

@@ -1,7 +1,7 @@
 package campeonatofutebol;
 
 public class Partida {
-    private int cod;
+    private int codPartida;
     private Campeonato oCampeonato;
     private Rodada aRodada;
     private Estadio oEstadio;
@@ -9,6 +9,18 @@ public class Partida {
     private Time time2;
     private Arbitro oArbitro;
 
+    //<editor-fold defaultstate="collapsed" desc="Construtor">
+    public Partida(int codPartida, Campeonato oCampeonato, Rodada aRodada, Estadio oEstadio, Time time1, Time time2, Arbitro oArbitro) {
+        this.codPartida = codPartida;
+        this.oCampeonato = oCampeonato;
+        this.aRodada = aRodada;
+        this.oEstadio = oEstadio;
+        this.time1 = time1;
+        this.time2 = time2;
+        this.oArbitro = oArbitro;
+    }
+    //</editor-fold>
+       
     //<editor-fold defaultstate="collapsed" desc="Getters e Setters">
     public Rodada getaRodada() {
         return aRodada;
@@ -18,12 +30,12 @@ public class Partida {
         this.aRodada = aRodada;
     }
     
-    public int getCod() {
-        return cod;
+    public int getCodPartida() {
+        return codPartida;
     }
     
-    public void setCod(int cod) {
-        this.cod = cod;
+    public void setCod(int codPartida) {
+        this.codPartida = codPartida;
     }
     
     public Arbitro getoArbitro() {
