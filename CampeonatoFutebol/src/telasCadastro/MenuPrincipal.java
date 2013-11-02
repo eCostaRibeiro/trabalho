@@ -4,6 +4,8 @@
  */
 package telasCadastro;
 
+import telasConsulta.*;
+
 /**
  *
  * @author Renan
@@ -55,6 +57,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jMenu3.setText("Consultas");
 
         jMenuItem2.setText("Campeonato");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem2);
 
         jMenuItem3.setText("Rodada");
@@ -64,6 +71,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jMenu3.add(jMenuItem4);
 
         jMenuItem5.setText("Time");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem5);
 
         jMenuItem6.setText("Jogador");
@@ -75,9 +87,19 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jMenu3.add(jMenuItem6);
 
         jMenuItem7.setText("Estádio");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem7);
 
         jMenuItem8.setText("Árbitro");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem8);
 
         jMenu1.add(jMenu3);
@@ -153,7 +175,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-        // Tela de Consulta de Jogador
+        // Tela de consulta do Jogador
+        
+        new ConsultaJogador().setVisible(true);
         
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
@@ -206,6 +230,31 @@ public class MenuPrincipal extends javax.swing.JFrame {
         // Tela de Cadastro do Campeonato
         new CriarCampeonato(this).setVisible(true); 
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // Tela de consulta do Campeonato
+        
+        new ConsultaCampeonato().setVisible(true);
+        
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        // Tela de consulta do Arbitro
+        
+        new ConsultaArbitro().setVisible(true);
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+       // Tela de consulta do Estadio
+        
+        new ConsultaEstadio().setVisible(true);
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        // Tela de consulta do Time
+        
+        new ConsultaTime().setVisible(true);
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     /**
      * @param args the command line arguments
