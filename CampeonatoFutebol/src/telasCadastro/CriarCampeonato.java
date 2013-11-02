@@ -2,31 +2,32 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package telas;
+package telasCadastro;
 
-import campeonatofutebol.Estadio;
-import controles.ControleEstadio;
+import campeonatofutebol.Campeonato;
+import controles.ControleCampeonato;
 import javax.swing.JOptionPane;
 
 /**
  *
  * @author Renan
  */
-public class CadastroEstadio extends javax.swing.JFrame {
+public class CriarCampeonato extends javax.swing.JFrame {
     private MenuPrincipal telaAnterior;
     /**
-     * Creates new form CadastroEstadio
+     * Creates new form CriarCampeonato
      */
-    private CadastroEstadio() {
+    private CriarCampeonato() {
         initComponents();
     }
     
-    public CadastroEstadio(MenuPrincipal telaAnterior) {
+    public CriarCampeonato(MenuPrincipal telaAnterior) {
         // Chamar o construtor Padrão
         this ();
         
         this.telaAnterior = telaAnterior;
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -37,14 +38,16 @@ public class CadastroEstadio extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jcodEstadio = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jnomeEstadio = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jcodCamp = new javax.swing.JTextField();
+        jnomeCamp = new javax.swing.JTextField();
+        janoCamp = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Cadastro do Estádio");
+        setTitle("Cadastro de Campeonato");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosed(java.awt.event.WindowEvent evt) {
                 formWindowClosed(evt);
@@ -53,13 +56,22 @@ public class CadastroEstadio extends javax.swing.JFrame {
 
         jLabel1.setText("Código:");
 
-        jcodEstadio.setToolTipText("Código do Estadio");
+        jLabel2.setText("Ano:");
 
-        jLabel2.setText("Nome:");
+        jLabel3.setText("Nome:");
 
-        jnomeEstadio.setToolTipText("Nome do Estadio");
+        jcodCamp.setToolTipText("Código do Campeonato");
+        jcodCamp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcodCampActionPerformed(evt);
+            }
+        });
 
-        jButton1.setText("Criar");
+        jnomeCamp.setToolTipText("Nome do Campeonato");
+
+        janoCamp.setToolTipText("Ano do Campeonato");
+
+        jButton1.setText("Salvar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -79,20 +91,27 @@ public class CadastroEstadio extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton2))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jcodEstadio, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jnomeEstadio, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(21, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jcodCamp, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(18, 18, 18)
+                                .addComponent(janoCamp, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jnomeCamp, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 13, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -100,12 +119,16 @@ public class CadastroEstadio extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jcodEstadio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jcodCamp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jnomeCamp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jnomeEstadio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                    .addComponent(janoCamp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
@@ -115,10 +138,9 @@ public class CadastroEstadio extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
-        // Tratamento para operação de fechar a janela
-        telaAnterior.setEnabled(true);
-    }//GEN-LAST:event_formWindowClosed
+    private void jcodCampActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcodCampActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jcodCampActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // Botão Cancelar
@@ -126,23 +148,30 @@ public class CadastroEstadio extends javax.swing.JFrame {
         telaAnterior.setEnabled(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        // Tratamento para operação de fechar a janela
+        telaAnterior.setEnabled(true);
+    }//GEN-LAST:event_formWindowClosed
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String codEstadio = jcodEstadio.getText();
-        String nomeEstadio = jnomeEstadio.getText();
+        String codCamp = jcodCamp.getText();
+        String nomeCamp = jnomeCamp.getText();
+        String anoCamp = janoCamp.getText();
        
         try {
-            Integer etd = Integer.parseInt(codEstadio);
+            Integer camp = Integer.parseInt(codCamp);
         } catch (Exception e) {
             JOptionPane.showMessageDialog (this, 
                     "Falha no cadastro do código!");
             return;
         }
         // Criando objeto do Arbitro
-        Estadio etd = new Estadio (Integer.parseInt(jcodEstadio.getText()), jnomeEstadio.getText());
+        Campeonato camp = new Campeonato (Integer.parseInt(jcodCamp.getText()), 
+                Integer.parseInt(janoCamp.getText()), jnomeCamp.getText());
         
         // Chamar o controle para tentar cadastrar
-        ControleEstadio controle = new ControleEstadio();
-        if (controle.cadastrarEstadio(etd)){
+        ControleCampeonato controle = new ControleCampeonato();
+        if (controle.cadastrarCampeonato(camp)){
             JOptionPane.showMessageDialog (this, "Cadastrado com Sucesso!");
         
         }else {
@@ -173,13 +202,13 @@ public class CadastroEstadio extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CadastroEstadio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CriarCampeonato.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CadastroEstadio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CriarCampeonato.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CadastroEstadio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CriarCampeonato.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CadastroEstadio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CriarCampeonato.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -189,7 +218,7 @@ public class CadastroEstadio extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                new CadastroEstadio().setVisible(true);
+                new CriarCampeonato().setVisible(true);
             }
         });
     }
@@ -198,7 +227,9 @@ public class CadastroEstadio extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jcodEstadio;
-    private javax.swing.JTextField jnomeEstadio;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JTextField janoCamp;
+    private javax.swing.JTextField jcodCamp;
+    private javax.swing.JTextField jnomeCamp;
     // End of variables declaration//GEN-END:variables
 }

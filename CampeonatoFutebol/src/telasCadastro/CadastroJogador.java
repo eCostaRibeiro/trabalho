@@ -2,31 +2,32 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package telas;
+package telasCadastro;
 
-import campeonatofutebol.Time;
-import controles.ControleTime;
+import campeonatofutebol.Jogador;
+import controles.ControleJogador;
 import javax.swing.JOptionPane;
 
 /**
  *
  * @author Renan
  */
-public class CadastroTime extends javax.swing.JFrame {
+public class CadastroJogador extends javax.swing.JFrame {
     private MenuPrincipal telaAnterior;
     /**
-     * Creates new form CadastroTime
+     * Creates new form CadastroJogador
      */
-    private CadastroTime() {
+    private CadastroJogador() {
         initComponents();
     }
     
-    public CadastroTime(MenuPrincipal telaAnterior) {
+    public CadastroJogador(MenuPrincipal telaAnterior) {
         // Chamar o construtor Padrão
         this ();
         
         this.telaAnterior = telaAnterior;
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -37,27 +38,28 @@ public class CadastroTime extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        jnomeJogador = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jcodTime = new javax.swing.JTextField();
-        jnomeTime = new javax.swing.JTextField();
+        jcodJogador = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Cadastro de Time");
+        setTitle("Cadastro de Jogador");
+        setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosed(java.awt.event.WindowEvent evt) {
                 formWindowClosed(evt);
             }
         });
 
-        jLabel1.setText("Código:");
+        jLabel1.setText("Nome:");
 
-        jLabel2.setText("Nome:");
+        jnomeJogador.setToolTipText("Nome do Jogador");
 
-        jcodTime.setToolTipText("Código do Time");
+        jLabel2.setText("Código:");
 
-        jnomeTime.setToolTipText("Nome do Time");
+        jcodJogador.setToolTipText("Código do Jogador");
 
         jButton1.setText("Criar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -79,38 +81,41 @@ public class CadastroTime extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jcodTime, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jnomeTime, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(19, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jcodJogador, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addComponent(jButton1)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton2))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addComponent(jLabel1)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jnomeJogador, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(0, 20, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jcodTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel2)
+                    .addComponent(jcodJogador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jnomeTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                    .addComponent(jLabel1)
+                    .addComponent(jnomeJogador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jnomeJogador.getAccessibleContext().setAccessibleName("");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -127,29 +132,28 @@ public class CadastroTime extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String codTime = jcodTime.getText();
-        String nomeTime = jnomeTime.getText();
+        String codJogador = jcodJogador.getText();
+        String nomeJogador = jnomeJogador.getText();
        
         try {
-            Integer ca = Integer.parseInt(codTime);
+            Integer ca = Integer.parseInt(codJogador);
         } catch (Exception e) {
             JOptionPane.showMessageDialog (this, 
                     "Falha no cadastro do código!");
             return;
         }
         // Criando objeto do Arbitro
-        Time time = new Time (Integer.parseInt(jcodTime.getText()), jnomeTime.getText());
+        Jogador joga = new Jogador (Integer.parseInt(jcodJogador.getText()), jnomeJogador.getText());
         
         // Chamar o controle para tentar cadastrar
-        ControleTime controle = new ControleTime();
-        if (controle.cadastrarTime(time)){
+        ControleJogador controle = new ControleJogador();
+        if (controle.cadastrarJogador(joga)){
             JOptionPane.showMessageDialog (this, "Cadastrado com Sucesso!");
         
         }else {
             JOptionPane.showMessageDialog (this, "Falha no cadastro!");
             
         }
-        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -173,13 +177,13 @@ public class CadastroTime extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CadastroTime.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroJogador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CadastroTime.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroJogador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CadastroTime.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroJogador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CadastroTime.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroJogador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -189,7 +193,7 @@ public class CadastroTime extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                new CadastroTime().setVisible(true);
+                new CadastroJogador().setVisible(true);
             }
         });
     }
@@ -198,7 +202,7 @@ public class CadastroTime extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jcodTime;
-    private javax.swing.JTextField jnomeTime;
+    private javax.swing.JTextField jcodJogador;
+    private javax.swing.JTextField jnomeJogador;
     // End of variables declaration//GEN-END:variables
 }

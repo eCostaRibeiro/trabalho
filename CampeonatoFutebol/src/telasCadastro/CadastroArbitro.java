@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package telas;
+package telasCadastro;
 
 import campeonatofutebol.Arbitro;
 import controles.ControleArbitro;
