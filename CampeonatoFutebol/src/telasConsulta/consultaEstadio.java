@@ -36,6 +36,7 @@ public class ConsultaEstadio extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Consulta de Estádio");
 
         jLabel1.setText("Código:");
 

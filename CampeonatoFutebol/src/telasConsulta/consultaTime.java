@@ -36,6 +36,7 @@ package telasConsulta;
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Consulta de Time");
 
         jLabel1.setText("Código:");
 
