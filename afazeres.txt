@@ -1,0 +1,37 @@
+POR FAZER:
+
+	> Tela menu
+		> Criar campeonato
+			o> formulário para cadastrar nome e data do campeonato
+			
+		
+		> cosultas
+			> consultar campeonato
+			> consultar rodada
+			> cosultar partida
+			> cosultar time
+			> consultar jogador
+			> consultar estádio
+			> consultar árbitro
+		> Gerenciar campeonato
+			o> links para as telas de cadastros
+				. cadastro de times
+				. cadastro de jogadores
+				. cadastro de árbitros
+				. cadastro de estádios
+				. botão para gerar
+						
+PRONTO:
+	
+	> banco de dados (Arquitetura)
+	> algoritmo para gerar partidas e rodadas
+	> MER
+	> Classes:
+		. arbitro
+		. campeonato
+		. estadio
+		. jogador
+		. partida
+		. rodada
+		. time
+		
