@@ -10,6 +10,7 @@ import campeonatofutebol.Time;
  *
  * @author Renan
  */
+//<editor-fold defaultstate="collapsed" desc="Classe de controle Time">
 public class ControleTime {
     public boolean cadastrarTime (Time time){
         
@@ -22,7 +23,8 @@ public class ControleTime {
         result = true;
         
     }
-        
-        return result;
+                
+                return result;
     }
 }
+//</editor-fold>

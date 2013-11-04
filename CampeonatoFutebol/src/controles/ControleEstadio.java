@@ -10,6 +10,7 @@ import campeonatofutebol.Estadio;
  *
  * @author Renan
  */
+//<editor-fold defaultstate="collapsed" desc="Classe de controle Estadio">
 public class ControleEstadio {
     public boolean cadastrarEstadio (Estadio etd){
         
@@ -22,7 +23,8 @@ public class ControleEstadio {
         result = true;
         
     }
-        
-        return result;
+                
+                return result;
     }
+    //</editor-fold>
 }

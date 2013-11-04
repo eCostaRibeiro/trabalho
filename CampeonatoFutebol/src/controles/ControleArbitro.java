@@ -10,6 +10,7 @@ import campeonatofutebol.Arbitro;
  *
  * @author Renan
  */
+//<editor-fold defaultstate="collapsed" desc="Classe de controle Arbitro">
 public class ControleArbitro {
     public boolean cadastrarArbitro (Arbitro arb){
         
@@ -22,7 +23,8 @@ public class ControleArbitro {
         result = true;
         
     }
-        
-        return result;
+                
+                return result;
     }
 }
+//</editor-fold>

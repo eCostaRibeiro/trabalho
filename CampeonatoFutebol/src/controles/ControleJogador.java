@@ -10,8 +10,9 @@ import campeonatofutebol.Jogador;
  *
  * @author Renan
  */
+//<editor-fold defaultstate="collapsed" desc="Classe de controle Jogador">
 public class ControleJogador {
-     public boolean cadastrarJogador (Jogador joga){
+    public boolean cadastrarJogador (Jogador joga){
         
         boolean result = false;
         
@@ -22,7 +23,8 @@ public class ControleJogador {
         result = true;
         
     }
-        
-        return result;
+                
+                return result;
     }
 }
+//</editor-fold>

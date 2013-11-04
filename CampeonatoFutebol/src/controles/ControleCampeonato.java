@@ -10,6 +10,7 @@ import campeonatofutebol.Campeonato;
  *
  * @author Renan
  */
+//<editor-fold defaultstate="collapsed" desc="Controle da Classe Campeonato">
 public class ControleCampeonato {
     public boolean cadastrarCampeonato (Campeonato camp){
         
@@ -22,7 +23,8 @@ public class ControleCampeonato {
         result = true;
         
     }
-        
-        return result;
+                
+                return result;
     }
 }
+//</editor-fold>
